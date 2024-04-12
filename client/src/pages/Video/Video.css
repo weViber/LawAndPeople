@@ -1,0 +1,37 @@
+.VideoLists {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.VideoList {
+    width: 33.3%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.VideoList a iframe {
+    width: 100%;
+    height: auto;
+}
+.VideoListBG {
+    /* background-color: #EDEDED; */
+    width: 100%;
+}
+.VideoListBG img {
+    width: 100%;
+    border-radius: 5px;
+}
+@media (max-width: 768px) {
+    .VideoLists {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .VideoList {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+}

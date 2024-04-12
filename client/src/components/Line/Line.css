@@ -1,0 +1,8 @@
+.Line {
+    width: 100%;
+    margin-bottom: 50px;
+}
+.Line > div{
+    height: 1px;
+    border-top : 1px solid #DBDBDB;
+}

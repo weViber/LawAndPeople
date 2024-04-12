@@ -1,0 +1,8 @@
+.Loading {
+    width: 100%;
+}
+.Loading p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FF720A;
+}

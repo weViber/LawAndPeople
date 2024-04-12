@@ -1,0 +1,20 @@
+.Menu {
+    width: 100%;
+    padding: 25px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #DBDBDB;
+    margin-bottom: 25px;
+}
+.Menu button {
+    width: 33.3%;
+    cursor: pointer;
+}
+.Menu button:hover {
+    color: #FF720A;
+}
+.Menu button:nth-child(1) {
+    border-right: 1px solid #D9D9D9;
+}
+.Menu button:nth-child(3) {
+    border-left: 1px solid #D9D9D9;
+}

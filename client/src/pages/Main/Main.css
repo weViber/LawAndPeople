@@ -1,0 +1,235 @@
+.Main .Address {
+    width: 100%;
+}
+.Main .Address .AddressImgWrap {
+    width: 100%;
+}
+.Main .Address .AddressImgWrap img {
+    width: 100%;
+}
+
+.Main .Address .AddressTextWrap {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.Main .Address .AddressWrap {
+    background-color: #F5F5F5;
+    border: 1px solid #D9D9D9;
+    padding: 15px 15px;
+    text-align: left;
+}
+.Main .Address .AddressWrap > div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.Main .Address .AddressText {
+    font-size: 16px;
+    color: #818181;
+    margin-bottom: 10px;
+}
+.Main .Address .PhoneNum {
+    font-size: 16px;
+    color: #818181;
+}
+.Main .Address .CopyBtn {
+    font-size: 16px;
+    color: #FF720A;
+    cursor: pointer;
+}
+.Main .AboutBtn {
+    background-color: #ff720a;
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: #fff!important;
+    display: block;
+    font-size: 18px;
+    padding: 25px 35px;
+    text-align: center;
+}
+.Main .Category {
+    margin: 30px 0;
+    width: 100%;
+    padding: 30px 0;
+    box-sizing: border-box;
+    border-top: 1px solid #E3E3E3;
+}
+.Main .CategoryTitle {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.Main .Category .CategoryLists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Main .Category .CategoryList {
+    width: calc(25% - 5px);
+    background-color: #F5F5F5;
+    text-align: left;
+    margin: 0 2.5px 10px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #818181;
+}
+.Main .Category .CategoryList:hover {
+    background-color: #d8d8d8;
+    color: #818181;
+}
+.Main .Category .CategoryList:first-child {
+    background-color: #FFF;
+    border: 1px solid #D9D9D9;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: #000;
+}
+.Main .Category .CategoryList:first-child:hover {
+    background-color: #d8d8d8;
+    color: #818181;
+}
+.Main .Category .CategoryList span {
+    font-size: 10px;
+    margin-left: 5px;
+}
+.Main .Counsel {
+    width: 100%;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #FF720A;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.Main .Counsel > div{
+    text-align: left;
+    color: #FFF;
+}
+.Main .Counsel > div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.Main .Counsel > div > div img {
+    margin-bottom: 2px;
+}
+.Main .Counsel .CounselText01 {
+    font-size: 18px;
+    margin-right: 10px;
+}
+.Main .Counsel .CounselText02 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5em;
+}
+.Main .Youtube {
+    width: 100%;
+    margin-top: 30px;
+}
+.Main .Youtube > div{ 
+    width: 100%;
+    cursor: pointer;
+}
+.Main .Youtube .MainVideo {
+    width: 100%;
+    border-radius: 25px;
+}
+.Main .Youtube .logoYoutube {
+    float: right;
+}
+.Main .relativeSection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.Main .relativeSection > div {
+    width: calc(50% - 10px);
+}
+.Main .NewCounsel {
+    margin: 30px 0;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #F2F2F2;
+}
+.Main .NewCounselList {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    position: relative;
+}
+.Main .NewCounselList::after {
+    position:absolute;
+    left: 0;
+    top: 50%;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #D8D8D8;
+}
+.Main .NewCounselList .NewCounselTitle {
+    font-size: 14px;
+    color: #000;
+    background-color: #F2F2F2;
+    padding-right: 15px;
+    z-index: 1;
+}
+.Main .NewCounselList .NewCounselCategory {
+    font-size: 14px;
+    color: #818181;
+    padding-left: 15px;
+    background-color: #F2F2F2;
+    z-index: 1;
+}
+@media (max-width : 768px) {
+    .Main .relativeSection {
+        display: flex;
+        flex-direction: column;
+    }
+    .Main .relativeSection > div {
+        width: 100%;
+    }
+    .Main .Category {
+        border-bottom: 1px solid #E3E3E3;
+    }
+    .Main .Category .CategoryLists {
+        justify-content: space-between;
+    }
+    .Main .Category .CategoryList {
+        width: calc(50% - 5px);
+        margin-bottom: 10px;
+    }
+    .Main .Counsel > div > img {
+        width: 120px;
+    }
+    .Main .Address .AddressText {
+        font-size: 10px;
+    }
+    .Main .Address .PhoneNum {
+        font-size: 12px;
+    }
+    .Main .Address .CopyBtn {
+        font-size: 10px;
+    }
+    .Main .AboutBtn {
+        font-size: 16px;
+        padding: 25px 15px;
+    }
+    .Main .NewCounselList a {
+        width: 50%;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

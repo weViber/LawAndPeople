@@ -1,0 +1,39 @@
+.Banner {
+    padding-top: 50px;
+    background-image: url('../../assets/images/bannerBG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    margin-bottom: 50px;
+}
+.BannerText {
+    text-align: left;
+}
+.BannerText h2 {
+    line-height: 1.5em;
+}
+.BannerText .orange {
+    color: #FF720A;
+}
+.BannerImg {
+    width: 100%;
+    height: 320px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.BannerImg img {
+    height: 100%;
+}
+@media (max-width : 768px) {
+    .BannerImg {
+        height: 220px;
+    }
+    .BannerImg img {
+        max-width: 100%;
+        height: auto;
+    }
+    .banner06Img {
+        max-width: 65% !important;
+    }
+}

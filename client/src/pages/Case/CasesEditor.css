@@ -1,0 +1,49 @@
+.CasesEditor .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.CasesEditor .container h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.CasesEditor .container label{
+    font-size: 18px;
+    color: #818181;
+    margin-bottom: 10px;
+}
+
+.CasesEditor .container input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+.CasesEditor .container select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #DBDBDB;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+.CasesEditor .container .EditorComponent {
+    width: 100%;
+}
+.CasesEditor .container .BtnWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 30px 0;
+}
+.CasesEditor .container .BtnWrap .Btn {
+    padding: 10px 20px;
+    background-color: #FF720A;
+    border-radius: 5px;
+    color: #FFF;
+    box-sizing: border-box;
+    margin-left: 20px;
+    font-size: 14px;
+}
