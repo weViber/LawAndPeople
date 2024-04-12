@@ -1,20 +1,20 @@
-// index.js
-const express = require('express')
+// @ts-check
 
-const app = express()
-const PORT = 4000
+require('dotenv').config()
 
-app.listen(PORT, () => {
-    console.log(`API listening on PORT ${PORT} `)
-})
+const app = require('./src/app')
 
-app.get('/', (req, res) => {
-    res.send('Hey this is my API running 🥳')
-})
+const { PORT } = require('./src/common')
+const mongo = require('./src/mongo')
 
-app.get('/about', (req, res) => {
-    res.send('This is my about route..... ')
-})
-
-// Export the Express API
-module.exports = app
+mongo
+    .connectToDatabase()
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`App listening at http://localhost:${PORT}`)
+        })
+    })
+    .catch((error) => {
+        console.error('Failed to connect to MongoDB:', error)
+        throw error
+    })
