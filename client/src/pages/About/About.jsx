@@ -1,20 +1,23 @@
 import './About.css'
-import GroupPic from '../../assets/images/GroupPic.png'
+
+import BaeSuJi from '../../assets/images/BaeSuJi.png'
 import Banner from '../../components/Banner/Banner'
-import Line from "../../components/Line/Line";
-import Menu from "../../components/Menu/Menu";
-import SearchWrap from "../../components/SearchWrap/SearchWrap";
-import Man from '../../assets/images/Man.png'
-import Woman from '../../assets/images/Woman.png'
-import KimJongYul from '../../assets/images/KimJongYul.png'
-import WooHeeChang from '../../assets/images/WooHeeChang.png'
 import ChoiKyungJa from '../../assets/images/ChoiKyungJa.png'
+import GroupPic from '../../assets/images/GroupPic.png'
 import HanGwangTae from '../../assets/images/HanGwangTae.png'
 import JoHyunYoung from '../../assets/images/JoHyunYoung.png'
 import JwonJaeWon from '../../assets/images/JwonJaeWon.png'
 import KimHyungGi from '../../assets/images/KimHyungGi.png'
+import KimJongYul from '../../assets/images/KimJongYul.png'
 import KimMiJin from '../../assets/images/KimMiJin.png'
 import KimSuJin from '../../assets/images/KimSuJin.png'
+import Line from "../../components/Line/Line";
+import Man from '../../assets/images/Man.png'
+import Menu from "../../components/Menu/Menu";
+import NamKaYoung from '../../assets/images/NamKaYoung.png'
+import SearchWrap from "../../components/SearchWrap/SearchWrap";
+import Woman from '../../assets/images/Woman.png'
+import WooHeeChang from '../../assets/images/WooHeeChang.png'
 
 const About = ()=>{
     return(
@@ -34,6 +37,11 @@ const About = ()=>{
                             <p><span>대표변호사</span></p>
                             <p>우희창</p>
                         </div>
+                        <div className="Members Members_1">
+                            <p><img className="woohee" alt="woohee" src={ Woman } /></p>
+                            <p><span>소속변호사</span></p>
+                            <p>이예나</p>
+                        </div>
                         <div className="Members Members_3">
                             <p><img className="man" alt="HanGwangTae" src={ HanGwangTae } /></p>
                             <p><span>실장</span></p>
@@ -44,16 +52,22 @@ const About = ()=>{
                             <p><span>사무장</span></p>
                             <p>최경자</p>
                         </div>
-                        <div className="Members Members_7">
+                        {/* <div className="Members Members_7">
                             <p><img className="women" alt="KimSuJin" src={ KimSuJin } /></p>
                             <p><span>대리</span></p>
                             <p>김수진</p>
-                        </div>
-                        <div className="Members Members_9">
+                        </div> */}
+                        {/* <div className="Members Members_9">
                             <p><img className="women" alt="KimMiJin" src={ KimMiJin } /></p>
                             <p><span>주임</span></p>
                             <p>김미진</p>
+                        </div> */}
+                        <div className="Members Members_7">
+                            <p><img className="women" alt="KimMiJin" src={ BaeSuJi } /></p>
+                            <p><span>주임</span></p>
+                            <p>배수지</p>
                         </div>
+
                     </div>
                     <div className="Member Member2">
                         <div className="Members Members_2">
@@ -68,18 +82,18 @@ const About = ()=>{
                         </div>
                         <div className="Members Members_6">
                             <p><img className="man" alt="JwonJaeWon" src={ JwonJaeWon } /></p>
-                            <p><span>과장</span></p>
+                            <p><span>팀장</span></p>
                             <p>전재원</p>
                         </div>
                         <div className="Members Members_8">
                             <p><img className="women" alt="JoHyunYoung" src={ JoHyunYoung } /></p>
-                            <p><span>대리</span></p>
+                            <p><span>과장</span></p>
                             <p>조현영</p>
                         </div>
-                        <div className="Members Members_10">
-                            <p></p>
-                            <p><span></span></p>
-                            <p></p>
+                        <div className="Members Members_9">
+                            <p><img className="women" alt="NamKaYoung" src={ NamKaYoung } /></p>
+                            <p><span>사무원</span></p>
+                            <p>남가영</p>
                         </div>
                     </div>
                 </div>
