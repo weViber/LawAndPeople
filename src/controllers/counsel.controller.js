@@ -1,5 +1,6 @@
 const moment = require("moment");
 const db = require("../models");
+const telegram = require("../utils/telegram");
 
 const { counsel : Counsel } = db;
 
@@ -17,7 +18,8 @@ exports.create = async (req, res) => {
         createdAt : moment().format("YYYY-MM-DD hh:mm:ss")
     })
     await counsel.save()
-        .then(()=> {
+        .then(async ()=> {
+            await telegram.sendCounselNotification(counsel)
             res.status(200).json({ message : "Success"})
         })
         .catch(err => res.json(err))
