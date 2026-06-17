@@ -28,7 +28,7 @@ const Login = ()=>{
             } else if(result.data.message === 'InvaildPassword'){
                 return alert('비밀번호 오류')
             } else {
-                dispatch(login({ isLogined : true }))
+                dispatch(login({ isLogined : true, token : result.data.token }))
                 navigate('/')
             }
         }).catch(err => alert(err.message.message))

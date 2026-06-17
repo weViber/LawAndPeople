@@ -14,10 +14,9 @@ const CounselRewrite = ()=>{
         title : '',
         name : '',
         phone : '',
-        password : ''
     })
 
-    const { category, title, name, phone, password } = input
+    const { category, title, name, phone } = input
     const [content, setContent] = useState("")
 
     const handleInput = (e)=>{
@@ -27,11 +26,11 @@ const CounselRewrite = ()=>{
         })
     }
     useEffect(()=>{
-        if(!state){
+        if(!state || (!state.password && !state.token)){
             return alert('해당 게시물의 수정 권한이 없습니다.')
         } else{
             const fetchPost = async () => {
-                
+
                 const res = await readCounsel({ postId })
                 setInput({
                     ...input,
@@ -39,30 +38,36 @@ const CounselRewrite = ()=>{
                     title : res.data.title,
                     name : res.data.name,
                     phone : res.data.phone,
-                    password : res.data.password
                 })
                 setContent(res.data.content)
-    
+
             }
             fetchPost();
         }
     }, [])
 
     const sendBtn = ()=>{
+        // 일반 사용자는 비밀번호, 관리자는 토큰으로 인증 (CounselDoc 에서 전달)
         updateCounsel({
             postId : postId,
             category : category,
             title : title,
             name : name,
             phone : phone,
-            password : password,
             content : content,
+            password : state && state.password,
+            token : state && state.token,
         }).then(response => {
             if(response.data.message === "updated") {
                 alert('수정 완료')
                 navigate('/counsel')
             }
-        }).catch(err=>alert(`Error : ${ err.message }`))
+        }).catch(err=>{
+            if(err.response && err.response.status === 403){
+                return alert('비밀번호가 일치하지 않습니다')
+            }
+            alert(`Error : ${ err.message }`)
+        })
     }
 
     const cancleBtn = ()=>{
@@ -82,8 +87,6 @@ const CounselRewrite = ()=>{
                 <input className="titleInput" defaultValue={ name } type="text" placeholder="성명" onChange={ handleInput } name="name"/>
                 <label htmlFor="title">연락처</label>
                 <input className="titleInput" defaultValue={ phone } type="text" placeholder="연락처" onChange={ handleInput } name="phone"/>
-                <label htmlFor="title">비밀번호</label>
-                <input className="titleInput" defaultValue={ password } type="text" placeholder="비밀번호" onChange={ handleInput } name="password"/>
                 <label htmlFor="title">상담분류</label>
                 <select onChange={ handleInput } name="category" defaultValue={ category }>
                     <option value="손해배상">손해배상</option>

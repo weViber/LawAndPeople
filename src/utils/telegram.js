@@ -21,25 +21,32 @@ const truncate = (text, max) => {
     return text.length > max ? `${text.slice(0, max)}...` : text;
 };
 
-const buildCounselMessage = ({ category, title, name, phone, content, createdAt }) => {
+const HEADERS = {
+    create: "🆕 신규 상담 문의",
+    update: "✏️ 상담 수정됨",
+    delete: "🗑️ 상담 삭제됨",
+};
+
+const buildCounselMessage = (action, { category, title, name, phone, content, createdAt, updatedAt }) => {
     const body = truncate(stripHtml(content), CONTENT_PREVIEW_LIMIT);
     return [
-        `🆕 신규 상담 문의 [${category || "미분류"}]`,
+        `${HEADERS[action] || HEADERS.create} [${category || "미분류"}]`,
         "",
         `👤 ${name || "-"}`,
         `📞 ${phone || "-"}`,
         `📝 ${title || "-"}`,
-        `🕒 ${createdAt || "-"}`,
+        `🕒 작성: ${createdAt || "-"}`,
+        updatedAt ? `🕒 수정: ${updatedAt}` : null,
         "",
         "────────",
         body || "(내용 없음)",
         "────────",
         "",
         `🔗 ${HOMEPAGE_URL}`,
-    ].join("\n");
+    ].filter((line) => line !== null).join("\n");
 };
 
-exports.sendCounselNotification = async (counsel) => {
+const send = async (action, counsel) => {
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
@@ -49,13 +56,14 @@ exports.sendCounselNotification = async (counsel) => {
     }
 
     try {
-        const text = buildCounselMessage({
+        const text = buildCounselMessage(action, {
             category: counsel.category,
             title: counsel.title,
             name: counsel.name,
             phone: counsel.phone,
             content: counsel.content,
             createdAt: counsel.createdAt,
+            updatedAt: counsel.updatedAt,
         });
 
         const response = await fetch(`${TELEGRAM_API}/bot${token}/sendMessage`, {
@@ -72,3 +80,6 @@ exports.sendCounselNotification = async (counsel) => {
         console.error("[Telegram] notification error:", err.message);
     }
 };
+
+exports.sendCounselNotification = (counsel) => send("create", counsel);
+exports.sendCounselActionNotification = (action, counsel) => send(action, counsel);
