@@ -2,6 +2,7 @@ import EditorComponent from "../../components/EditorComponent/EditorComponent"
 import { useEffect, useState } from "react"
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios'
+import baseUrl from '../../service/apiConfig'
 
 const CaseRewrite = ()=>{
     const navigate = useNavigate()
@@ -19,7 +20,7 @@ const CaseRewrite = ()=>{
     }
     useEffect(()=>{
         const fetchPost = async () => {
-            const res = await axios.get(`http://localhost:8080/api/cases/${postId}`)
+            const res = await axios.get(`${baseUrl}/cases/${postId}`)
             setPost(res.data)
             setTitle(res.data.title)
             setContent(res.data.content)
@@ -28,7 +29,7 @@ const CaseRewrite = ()=>{
         fetchPost();
     }, [])
     const sendBtn = ()=>{
-        axios.put(`http://localhost:8080/api/cases/${postId}`, {
+        axios.put(`${baseUrl}/cases/${postId}`, {
             category : category,
             title : title,
             content : content

@@ -2,6 +2,7 @@ import EditorComponent from "../../components/EditorComponent/EditorComponent"
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import baseUrl from '../../service/apiConfig'
 import './CasesEditor.css'
 
 const CasesEditor = ()=>{
@@ -21,7 +22,7 @@ const CasesEditor = ()=>{
         if(!title || !content ){
             return alert('정보를 입력해주세요')
         }
-        axios.post('http://localhost:8080/api/cases', {
+        axios.post(`${baseUrl}/cases`, {
             category : category,
             title : title,
             content : content

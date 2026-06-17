@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import store from './redux/store';
 import { Provider } from 'react-redux';
+import './service/axiosAuth';
 
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
