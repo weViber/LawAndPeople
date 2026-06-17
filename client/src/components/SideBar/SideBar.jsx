@@ -17,7 +17,7 @@ const SideBar = ({ sideBar, setSideBar })=>{
                 <button className='sideCloseBtn' onClick={ handleSideBar }><FontAwesomeIcon icon={ faX } /></button>
             </div>
             <img className='logo' src={ mainlogo } alt="mainlogo" />
-            <a className='menu' href="/about">- 사무소 소개</a>
+            {/* <a className='menu' href="/about">- 사무소 소개</a> */}
             <a className='menu' href="/counsel">- 상담 사례</a>
             <a className='menu' href="/cases">- 해결 사례</a>
             <a className='menu' href="/guide">- 법률 가이드</a>
